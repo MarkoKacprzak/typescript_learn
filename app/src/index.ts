@@ -56,3 +56,20 @@ for (var item11 of someArray) {
 }
 var lyrics = 'Never gonna give you up';
 console.log( `<div>${lyrics}</div>`);
+
+function logAccess(obj, prop, desc){
+    const delegate = desc.value;
+    desc.value = function() {
+        console.log(`Wywolanie ${prop}!`);
+        return delegate.apply(this, arguments);
+    };
+}
+
+class MoneySafe {
+    @logAccess
+    openSafe(){
+        console.log('cos');
+    }
+}
+const safe=new MoneySafe();
+safe.openSafe();
