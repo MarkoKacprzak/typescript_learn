@@ -1,8 +1,8 @@
+"use strict";
 /**
  * monuments
  */
-"use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 var VehicleType;
 (function (VehicleType) {
     VehicleType[VehicleType["PedalCycle"] = 0] = "PedalCycle";
